@@ -1,0 +1,25 @@
+main{
+    margin: auto;
+    height: 1000px;
+    width: 1200px;
+    padding: 2em;
+    background-color: rgb(221, 221, 221);
+}
+
+main>div>img{
+    margin: 20px;
+    width: 40%;
+}
+
+main>div>div>p{
+    font-size: 31px;
+}
+main>div>div>p2{
+    font-size: 25px;
+    padding-left: 1em;
+    padding-top: -15px;
+}
+
+section{
+    height: 0;
+}

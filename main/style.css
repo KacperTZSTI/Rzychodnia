@@ -1,0 +1,137 @@
+::-moz-selection { /* Code for Firefox */
+    color: rgb(0, 0, 0);
+    background: rgb(236, 194, 5);
+  }
+  
+  ::selection {
+    color: rgb(0, 0, 0);
+    background: rgb(236, 194, 5);
+  }
+
+*{
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body{
+    margin: 0;
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url("media/cit2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+section {
+    height: 550px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+#user_option{
+    background-color: #FFFFFF;
+    width: 453px;
+    height: 264px;
+    display: flex;
+    flex-direction: column;
+    font-size: 72px;
+    border-left: 8px solid #E9D566;
+    z-index: 9;
+}
+
+#user_option>a{
+    color: #E9D566;
+    padding-left: 20px;
+}
+
+#user_option a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+.invisible{
+    visibility: hidden;
+}
+
+.visible{
+    visibility: visible;
+}
+
+.menu {
+    background-color: #E9D566;
+    overflow: hidden;
+    display: flex;
+    width: 100%;
+    border-bottom: 9px solid #FFFFFF;
+    height: 69px;
+  }
+
+.menu a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 0.6em;
+    text-decoration: none;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+.menu a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+.menu a.active {
+    background-color: #FFFFFF;
+    color: black;
+  }
+
+.logo>img{
+    display: block;
+}
+
+#user{
+    cursor: pointer;
+    justify-self: flex-end;
+}
+
+.profile{
+    background-color: #ddd;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+main{
+    background-color: #ffffff;
+    box-sizing: border-box; 
+    padding: 1rem 3rem; 
+    font-size: 25px;
+}
+
+main>div{
+    display: flex;
+}
+
+main>div>p{
+    width: 70%;
+}
+
+main>div>img{
+    padding: 1em;
+    width: 30%;
+    height: 400px;
+    background-color: black;
+}

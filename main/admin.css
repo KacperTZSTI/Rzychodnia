@@ -1,0 +1,31 @@
+body{
+    background-image: url("media/cit3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+section{
+    height: 20px;
+}
+
+main{
+    width: 600px;
+    height: 550px;
+    margin: auto;
+    text-align: center;
+    background-color: #e9d56600;
+}
+
+.n1{
+    padding: 0.5em;
+    font-size: 26px;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+.tab{
+    background-color: rgba(240, 248, 255, 0.342);
+    font-size: 31px;
+}

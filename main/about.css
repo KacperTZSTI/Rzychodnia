@@ -1,0 +1,27 @@
+main{
+    background-color: rgba(102, 51, 153, 0);
+}
+
+section{
+    height: 0px;
+}
+
+.akt{
+    width: 100%;
+    height: 400px;
+    background-color: white;
+    padding: 1em;
+    margin-bottom: 20px;
+}
+
+.akt>img{
+    height: 350px;
+    width: 350px;
+}
+
+.akt>div>p {
+    padding: 1em;
+}
+.akt>div>h3 {
+    padding: 0.5em;
+}

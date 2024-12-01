@@ -1,0 +1,41 @@
+h1{
+    font-size: 69px;
+}
+
+main{
+    margin: auto;
+    height: 1000px;
+    width: 1200px;
+    padding: 0.5em;
+    background-color: rgb(221, 221, 221);
+    text-align: center;
+}
+
+main>form>label{
+    font-size: 31px;
+    margin: 5px;
+}
+
+input{
+    height: 30px;
+    border: 3px solid rgba(230, 230, 102, 0.767);
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+}
+
+textarea{
+    border: 3px solid rgba(230, 230, 102, 0.767);
+    font-family: "Jersey 25", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+input :active{
+    border: 3px solid rgba(236, 176, 10, 0.767);
+}
+
+section{
+    height: 0;
+}

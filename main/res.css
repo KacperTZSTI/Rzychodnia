@@ -1,0 +1,33 @@
+section{
+    height: 180px;
+}
+
+main{
+    width: 900px;
+    height: 800px;
+    margin: auto;
+    text-align: center;
+    background-color: #E9D566;
+    box-shadow: 15px 15px 20px black;
+}
+
+h1{
+    font-size: 41px;
+}
+
+.n1{
+    padding: 0.5em;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.n2{
+    padding: 0.5em;
+    font-size: 26px;
+    margin-bottom: 10px;
+    width: 292px;
+    border: none;
+    border-radius: 0%;
+    background-color: #CFC25D;
+    color: black;
+}
