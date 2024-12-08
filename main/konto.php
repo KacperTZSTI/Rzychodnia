@@ -35,8 +35,9 @@ if (!isset($_SESSION["username"])) {
     <div>
         <img></img>
         <div>
-        <h3><?php echo $_SESSION["username"]; ?></h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium dignissimos odit consectetur mollitia iste, provident quia officiis delectus, rem, eligendi ratione. Harum voluptates asperiores commodi vitae necessitatibus architecto quas minima quo repudiandae labore. Eaque mollitia reprehenderit, modi eos, obcaecati molestias assumenda, rerum quas quibusdam ipsam accusantium ipsa porro tenetur quisquam!</p>
+        <h3><?php echo $_SESSION["username"], " ", $_SESSION["nazw"]; ?></h3>
+        <h5><?php echo $_SESSION["email"];?></h5>
+        <p><?php echo $_SESSION["adr"];?></p>
         </div>
     </div>
     </main>

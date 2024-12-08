@@ -3,7 +3,11 @@ section{
 }
 
 main>div>img{
-    width: 50%;
+    width: 25%;
     margin: 20px;
     border-radius: 50%;
+}
+
+main>div>div{
+    width: 70%;
 }

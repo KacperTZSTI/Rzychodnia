@@ -20,10 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo mysqli_num_rows($result);
 
   if (mysqli_num_rows($result) == 1) {
-    $sql = "SELECT imie FROM pacjent WHERE email = '$email' AND haslo = '$password'";
-    $imie = mysqli_query($conn, $sql);
-while($row = $imie->fetch_assoc()){
+    $sql = "SELECT * FROM pacjent WHERE email = '$email' AND haslo = '$password'";
+    $dane = mysqli_query($conn, $sql);
+while($row = $dane->fetch_assoc()){
     $_SESSION["username"] = $row["imie"];
+    $_SESSION["nazw"] = $row["nazwisko"];
+    $_SESSION["email"] = $row["email"];
+    $_SESSION["adr"] = $row["adres"];
 }
     header("Location: ../konto.php");
   } else {
