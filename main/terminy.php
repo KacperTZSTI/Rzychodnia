@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">\
+    <link rel="stylesheet" href="terminy.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
@@ -14,20 +15,47 @@
     <div class="menu">
         <a class="logo" href="index.html"><img src="media/els.png"></a>
         <a href="about.html">Aktualności</a>
-        <a href="e-res.html">E-rejestracja</a>
+        <a href="e-res.php">E-rejestracja</a>
         <a href="contact.html">Kontakt</a>
         <a id="user" class="active" onclick="uo_appear()">Użytkownik <img class="profile" src="#"></a>
     </div>
     <section>
         <div id="user_option" class="invisible"><a href="konto.php">Profil</a><a href="terminy.php">Terminy</a><a href="php/wyloguj.php">Wyloguj</a></div>
     </section>
-    <main>
-        <h3>O nas:</h3>
-    <div>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium dignissimos odit consectetur mollitia iste, provident quia officiis delectus, rem, eligendi ratione. Harum voluptates asperiores commodi vitae necessitatibus architecto quas minima quo repudiandae labore. Eaque mollitia reprehenderit, modi eos, obcaecati molestias assumenda, rerum quas quibusdam ipsam accusantium ipsa porro tenetur quisquam!</p>
-        <img></img>
-    </div>
-    </main>
+    
+<?php 
+
+session_start();
+if (!isset($_SESSION["username"])) {
+  header("Location: ../logowanie.html");
+  exit();
+}
+
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "przychodnia";
+
+$conn = mysqli_connect($host, $username, $password, $database);
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+$id = $_SESSION['id'];
+$sql = "SELECT * FROM wizyta WHERE id_pacjenta = '$id'";
+$result = $conn->query($sql);
+
+while($row = $result->fetch_assoc()){
+    $l = $row['id_lekarza'];
+    $sql2 = "SELECT imie FROM lekarz WHERE id_lekarza = '$l'";
+    $l2 = $conn->query($sql2);
+    while($row2 = $l2->fetch_assoc()){
+        $lekarz = $row2["imie"];
+    }
+    echo "<div class='term'><h1>", $lekarz, "</h1>   <h2>", $row["data_wizyty"], "</h2><br><p>", $row["powod_wizyty"], "</p></div>";
+}
+
+?>
+
     <footer>
         
     </footer>

@@ -9,13 +9,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jersey+25&display=swap" rel="stylesheet">
     <script defer src="script.js"></script>
+    <script defer src="e-res.js"></script>
     <title>Przychodnia Elsen</title>
 </head>
+
+<?php 
+
+$server = "localhost";
+$user = "root";
+$pass = "";
+$db = "przychodnia";
+
+$conn = new mysqli($server, $user, $pass, $db);
+
+
+$sql = "SELECT * FROM lekarz";
+$lekarze = $conn->query($sql);
+
+$sql = "SELECT * FROM grafik";
+$grafik = $conn->query($sql);
+
+
+?>
+
 <body>
     <div class="menu">
         <a class="logo" href="index.html"><img src="media/els.png"></a>
         <a href="about.html">Aktualności</a>
-        <a class="active" href="e-res.html">E-rejestracja</a>
+        <a class="active" href="e-res.php">E-rejestracja</a>
         <a href="contact.html">Kontakt</a>
         <a id="user" onclick="uo_appear()">Użytkownik <img class="profile" src="#"></a>
     </div>
@@ -25,20 +46,24 @@
     <main>
         <h1>Rejestracja wizyty</h1>
 
-        <form>
+        <form method="POST" action="php/offer.php">
             <label for="lekarz">Lekarz:</label>
-            <input type="text" name="lekarz" list="lekarze">
-            <datalist id="lekarze">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+            <input role="combobox" name="lekarz" list="" id="lek">
+            <datalist id="lekarze" role="listbox">
+                <?php 
+                while($row = $lekarze->fetch_assoc()){
+                    echo "<option value=", $row['imie'], ">" , $row['id_lekarza'], " ", $row['imie'], " ", $row['nazwisko'], "</option>";
+                }
+                ?>
             </datalist><br>
-            <label for="termin">Dostępne terminy:</label>
-            <input type="text" name="termin" list="terminy">
-            <datalist id="terminy">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+            <label for="termin">Dostępne terminy w następnym tygodniu:</label>
+            <input role="combobox" name="termin" list="" id="ter">
+            <datalist id="terminy" role="listbox">
+                <?php 
+                while($row = $grafik->fetch_assoc()){
+                    echo "<option value=", $row['dzien_tygodnia'],"-", $row['godzina_od'], ">" , $row['dzien_tygodnia'], " ", $row['godzina_od'], "-", $row['godzina_do'], "</option>";
+                }
+                ?>
             </datalist><br>
             <label for="powod">Powód wizyty:</label><br>
             <textarea name="powod" rows="30" cols="140"></textarea><br>

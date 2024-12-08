@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT * FROM pacjent WHERE email = '$email' AND haslo = '$password'";
     $dane = mysqli_query($conn, $sql);
 while($row = $dane->fetch_assoc()){
+    $_SESSION["id"] = $row["id_pacjenta"];
     $_SESSION["username"] = $row["imie"];
     $_SESSION["nazw"] = $row["nazwisko"];
     $_SESSION["email"] = $row["email"];

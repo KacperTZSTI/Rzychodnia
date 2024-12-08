@@ -39,3 +39,45 @@ input :active{
 section{
     height: 0;
 }
+  
+  legend, label{
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+  }
+  
+  input {
+    font-size: 25px;
+    padding: 5px;
+    height: 35px;
+    width: 350px;
+    border: 1px solid rgb(231, 231, 91);
+    outline: none;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+  /*   border-bottom: none; */
+  }
+  datalist {
+    position: relative;
+    background-color: white;
+    border: 1px solid rgb(141, 212, 73);
+    border-radius: 0 0 5px 5px;
+    border-top: none;
+    width: 350px;
+    padding: 5px;
+    max-height: 10rem;
+    overflow-y: auto;
+    left: 458px;
+  }
+  
+  option {
+    background-color: white;
+    padding: 4px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 1px;
+     font-size: 25px;
+    cursor: pointer;
+  }
+  
+  option:hover,  .active{
+    background-color: rgb(230, 229, 173);
+  }
