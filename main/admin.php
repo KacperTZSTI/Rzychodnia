@@ -43,7 +43,7 @@ if (mysqli_num_rows($result) == 0) {
 <body>
     <div class="menu">
         <a class="logo" href="index.html"><img src="media/els.png"></a>
-        <a href="about.html">Aktualności</a>
+        <a href="about.php">Aktualności</a>
         <a href="e-res.php">E-rejestracja</a>
         <a href="contact.html">Kontakt</a>
         <a id="user" class="active" onclick="uo_appear()"><?php echo $user?> <img class="profile" src="#"></a>

@@ -1,3 +1,21 @@
+
+<?php
+session_start();
+$host = "localhost";
+$username = "root";
+$password = "";
+$database = "przychodnia";
+
+$conn = mysqli_connect($host, $username, $password, $database);
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT * FROM akt";
+$result = mysqli_query($conn, $sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -14,7 +32,7 @@
 <body>
     <div class="menu">
         <a class="logo" href="index.html"><img src="media/els.png"></a>
-        <a class="active" href="about.html">Aktualności</a>
+        <a class="active" href="about.php">Aktualności</a>
         <a href="e-res.php">E-rejestracja</a>
         <a href="contact.html">Kontakt</a>
         <a id="user" onclick="uo_appear()">Użytkownik <img class="profile" src="#"></a>
@@ -23,19 +41,24 @@
         <div id="user_option" class="invisible"><a href="konto.php">Profil</a><a href="terminy.php">Terminy</a><a href="php/wyloguj.php">Wyloguj</a></div>
     </section>
     <main>
-        <div class="akt"><img>
+
+        <?php
+
+        while($row = $result->fetch_assoc()){
+            $tyt = $row['tytul'];
+            $tek = $row['tekst'];
+
+            echo "        
+            <div class='akt'><img>
             <div>
-            <h3>lorem</h3>
-                <P>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum quos itaque dolorem deleniti reprehenderit tempore suscipit nisi nihil quisquam molestiae!</P>
+            <h3>$tyt</h3>
+                <P>$tek</P>
             </div>
-        </div>
-        <div class="akt">
-            <div>
-            <h3>lorem</h3>
-            <P>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt architecto explicabo expedita quo ratione repellat omnis rerum fugiat! Esse, a!</P>
-            </div>
-            <img>
-        </div>
+            </div>";
+        }
+
+        ?>
+        
     </main>
     <footer>
         

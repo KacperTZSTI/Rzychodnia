@@ -22,7 +22,7 @@ if (!isset($_SESSION["username"])) {
 <body>
     <div class="menu">
         <a class="logo" href="index.html"><img src="media/els.png"></a>
-        <a href="about.html">Aktualności</a>
+        <a href="about.php">Aktualności</a>
         <a href="e-res.php">E-rejestracja</a>
         <a href="contact.html">Kontakt</a>
         <a id="user" class="active" onclick="uo_appear()">Użytkownik <img class="profile" src="#"></a>
