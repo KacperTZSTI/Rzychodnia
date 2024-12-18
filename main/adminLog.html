@@ -23,13 +23,13 @@
         <div id="user_option" class="invisible"><a href="konto.php">Profil</a><a href="terminy.php">Terminy</a><a href="php/wyloguj.php">Wyloguj</a></div>
     </section>
     <main>
-        <form action="php/tablica.php" method="POST">
-            <button class="n1" submit" name="table" value="lekarz">LEKARZE</button>
-            <button class="n1" type="submit" name="table" value="grafik">GRAFIK</button>
-            <button class="n1" type="submit" name="table" value="specjalizacja">SPECJALIZACJE</button>
-            <button class="n1" type="submit" name="table" value="wizyta">WIZYTY</button>
-            <button class="n1" type="submit" name="table" value="pacjent">PACJENCI</button>
-            <button class="n1" type="submit" name="table" value="rozliczenie">ROZLICZENIA</button>
+        <h1>Zaloguj się.</h1>
+
+        <form action="admin.php" method="POST">
+            <input class="n1" type="text" name="user" placeholder=""><br>
+            <input class="n1" type="password" name="pass" placeholder="Pass"><br>
+
+            <Input class="n2" type="submit" value="Potwierdź"></Input>
         </form>
     </main>
     <footer>

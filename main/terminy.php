@@ -41,17 +41,21 @@ if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
 $id = $_SESSION['id'];
-$sql = "SELECT * FROM wizyta WHERE id_pacjenta = '$id'";
+$sql = "SELECT * FROM wizyta WHERE id_pacjenta = '$id' AND status_wizyty LIKE 'zaplanowana'";
 $result = $conn->query($sql);
 
 while($row = $result->fetch_assoc()){
+    $id_w = $row["id_wizyty"];
     $l = $row['id_lekarza'];
     $sql2 = "SELECT imie FROM lekarz WHERE id_lekarza = '$l'";
     $l2 = $conn->query($sql2);
     while($row2 = $l2->fetch_assoc()){
         $lekarz = $row2["imie"];
     }
-    echo "<div class='term'><h1>", $lekarz, "</h1>   <h2>", $row["data_wizyty"], "</h2><br><p>", $row["powod_wizyty"], "</p></div>";
+    echo "<form method='POST' action='php/term.php'><div class='term'><h1>", $lekarz, "</h1>   <h2>", $row["data_wizyty"], "</h2><br><p>", $row["powod_wizyty"], "</p>
+    <input name='id' type='num' class='invisible2' value='$id_w'></input>
+    <input name='op' type='submit' value='odwolana'></input>
+    <input name='op' type='submit' value='zakonczona'></input></div><form>";
 }
 
 ?>
